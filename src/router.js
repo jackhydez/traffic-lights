@@ -14,8 +14,9 @@ export default new Router({
     routes: [
         {
             path: '/',
-            component: Red
-            //component: () => import('./views/Red.vue')
+            beforeEnter: (to, from, next) => {
+                next('/red');
+              }
         },
         {
             path: '/red',
