@@ -10,19 +10,25 @@
 </template>
 
 <script>
-/*
-const Foo = {
-	beforeRouteEnter(to, from, next) {
-    if ((from.path == "/") || (from.path == "/red")) {
-      next('/yellow')
-    }
-     next();
-  }
-}
-*/
+export default {
+	created(){
+	}
 
-//router.push('yellow');
-//setTimeout(() => Router.push('/yellow'), 4000);
+}
+import router from '../router'
+//this.$router.push('yellow');
+//this.$router.push({ path: 'yellow' });
+let sec = 0;
+setInterval( function timer() {
+	sec++;
+	console.log(sec);	
+	if (sec === 4) {
+		router.push('/yellow');
+		router.go('/yellow');
+		  //next('/yellow')
+		sec = 0;
+	}
+}, 1000);
 
 </script>
 

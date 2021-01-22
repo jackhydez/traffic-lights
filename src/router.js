@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-// ??? @views/Red
 import Red from './views/Red'
 import Yellow from './views/Yellow'
 import Green from './views/Green'
@@ -16,11 +15,18 @@ export default new Router({
             path: '/',
             beforeEnter: (to, from, next) => {
                 next('/red');
-              }
+            }
         },
         {
             path: '/red',
             component: Red
+            /*
+            beforeEnter: (to, from, next) => {
+                setTimeout(() => {
+                    next('/yellow');
+                }, 3000);
+            }
+            */
         },
         {
             path: '/yellow',
@@ -36,3 +42,17 @@ export default new Router({
         }
     ]
 })
+
+/*
+let sec = 0;
+setInterval(() => {
+   sec++;
+}, 1000);
+
+setInterval(() => {
+    if (sec === 3) {
+        this.$router.push('yellow');
+    }
+
+}, 1000);
+*/

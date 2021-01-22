@@ -9,6 +9,19 @@
 	</div>
 </template>
 
+<script>
+/*
+export default {
+
+}
+
+import router from '../router'
+setTimeout(() => router.push('/red'), 9000);
+*/
+</script>
+
+
+
 <style>
 #red {
   background-color: #f00;
